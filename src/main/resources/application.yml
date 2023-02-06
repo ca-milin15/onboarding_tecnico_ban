@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/crediauto"
+    username: postgres
+    password: root
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+
+---
+
+mensajes-sistema:
+  excepciones:
+    general:
+      enumerado-no-encontrado: "%s con el código: %s no existe."
+      error-transaccion-db: "Ha ocurrido un error en la transacción, por lo tanto, la operacion no fue exitosa."
+      error-validacion-campos-entidades: "The field: %s %s"
+      error-duplicados-migracion-db: "En el archivo se encuentra(n) %s registro(s) duplicado(s)."
+    negocio:
+      vehiculo:
+        error-integridad-datos-almacenar: "Se ha producido un error de integridad de datos: %s"
+        entidad-no-encontrada: "El vehiculo con el ID: %s no existe."
+      marca:
+        entidad-no-encontrada: "La marca con el ID: %s no existe."
+      patio-autos:
+        error-integridad-datos-almacenar: "Se ha producido un error de integridad de datos en la transacción de patios de autos: %s"
+        entidad-no-encontrada: "El patio de autos con el ID: %s no existe."
+      asignacion-cliente:
+        error-integridad-datos-almacenar: "Se ha producido un error de integridad de datos en la transacción de asignacion de clientes: %s"
+        entidad-no-encontrada: "El patio de autos con el ID: %s no existe."
+      cliente:
+        error-integridad-datos-almacenar: "Se ha producido un error de integridad de datos en la transacción de clientes: %s"
+        entidad-no-encontrada: "El cliente con el ID: %s no existe."
+      ejecutivo:
+        error-integridad-datos-almacenar: "Se ha producido un error de integridad de datos en la transacción de ejecutivos: %s"
+        entidad-no-encontrada: "El ejecutivo con el ID: %s no existe."
+      solicitud-credito:
+        error-integridad-datos-almacenar: "Se ha producido un error de integridad de datos en la transacción de solicitud de credito: %s"
+        entidad-no-encontrada: "La solicitud de credito con el ID: %s no existe."
+        error-solicitudes-x-dia: "El cliente con el ID: %s, registra solicitud con estado: %s, en la fecha: %s"
+        error-vehiculo-reservado: "El vehiculo con el ID: %s, se encuentra reservado, con estado: %s, en la fecha: %s"
+    
